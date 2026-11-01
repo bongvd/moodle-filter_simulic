@@ -52,4 +52,6 @@ jobs:
       - run: moodle-plugin-ci validate
       - run: moodle-plugin-ci savepoints
       - run: moodle-plugin-ci grunt --max-lint-warnings 0
-      - run: moodle-plugin-ci phpunit
+      - name: phpunit
+        run: |
+          moodle-plugin-ci phpunit > phpunit.txt 2>&1 || { echo "::error::$(tr '\n' ' ' < phpunit.txt | tr -s ' ' | tail -c 1800)"; cat phpunit.txt; exit 1; }

@@ -25,7 +25,6 @@ namespace filter_simulic;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @covers     \filter_simulic\text_filter
  */
-#[\PHPUnit\Framework\Attributes\CoversClass(text_filter::class)]
 final class text_filter_test extends \advanced_testcase {
     /**
      * Runs the filter over a text.
